@@ -3,7 +3,7 @@ using System.Collections;
 
 public class JumpSceneButton : MonoBehaviour
 {
-  [SerializeField] private string sceneName;
+  [SerializeField] string sceneName;
 
   void OnClick()
   {
