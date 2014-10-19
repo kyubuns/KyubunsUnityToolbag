@@ -1,3 +1,7 @@
 Unityの便利そうな汎用的に使えそうなものをつっこんでます。
 たぶん、小さいゲームとか作るときに役立ちます。
 きっと。
+
+# 使い方
+Assets/以下に
+git submodule add git@github.com:kyubuns/KyubunsUnityToolbag.git
