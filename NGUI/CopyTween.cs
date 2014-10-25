@@ -6,22 +6,22 @@ using System.Reflection;
 
 public class CopyTween : MonoBehaviour
 {
-  [SerializeField] private GameObject original;
-  [SerializeField] private float delay;
+  [SerializeField] public GameObject original;
+  [SerializeField] public float delay;
 
   void Awake()
   {
-    if(!original)
-    {
-      Debug.LogWarning("missing original game object.");
-      return;
-    }
     MoveComponents();
-    Destroy(this);
+  }
+
+  void Start()
+  {
+    MoveComponents();
   }
 
   void MoveComponents()
   {
+    if(original == null) return;
     var from = original;
     var to = gameObject;
     var components = from.GetComponents<UITweener>();
@@ -34,5 +34,6 @@ public class CopyTween : MonoBehaviour
       copy.delay = delay;
       copy.Sample(0.0f, false);
     }
+    Destroy(this);
   }
 }
